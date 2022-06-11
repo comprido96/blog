@@ -13,3 +13,8 @@ home_bp = Blueprint(
 def home():
     """Homepage."""
     return render_template('home.html')
+
+@home_bp.route('/aboutme', methods=['GET'])
+def aboutme():
+    """Description of the author"""
+    return render_template('aboutme.html')
