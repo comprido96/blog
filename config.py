@@ -18,3 +18,8 @@ class Config:
     # Database
     SQLALCHEMY_DATABASE_URI = environ.get('SQLALCHEMY_DATABASE_URI')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+    # Flask-Assets
+    LESS_BIN = 'usr/bin/less'
+    ASSETS_DEBUG = False
+    ASSETS_AUTO_BUILD = True
