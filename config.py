@@ -16,7 +16,9 @@ class Config:
     TEMPLATES_FOLDER = 'templates'
 
     # Database
-    SQLALCHEMY_DATABASE_URI = environ.get('SQLALCHEMY_DATABASE_URI')
+    SQLALCHEMY_DATABASE_URI = environ.get('SQLALCHEMY_DATABASE_URI') or \
+        'sqlite:///' + path.join(basedir, 'app.db')
+    SQLALCHEMY_ECHO = False
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # Flask-Assets
