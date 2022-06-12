@@ -1,0 +1,6 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h1>By {{ post.author }} - created: {{ post.created }}</h1>
+    <p>{{ post.body }}</p>
+{% endblock %}

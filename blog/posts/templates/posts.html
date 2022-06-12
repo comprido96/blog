@@ -1,11 +1,12 @@
 {% extends 'layout.html' %}
 
 {% block content %}
+    <h1>Posts Section</h1>
+    {% for post in posts %}
     <div class="container">
-        <h1>Posts Section</h1>
-        {% for post in posts %}
         <h2>By {{ post.author }} - created: {{ post.created }}</h2>
         <p>{{ post.body }}</p>
-        {% endfor %}
+        <a href="{{ url_for('posts_bp.post', title=post.title) }}">{{ post.title }}</a>
     </div>
+    {% endfor %}
 {% endblock %}

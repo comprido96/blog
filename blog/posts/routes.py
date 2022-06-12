@@ -14,3 +14,8 @@ posts_bp = Blueprint(
 def posts():
     posts = Post.query.all()
     return render_template('posts.html', posts=posts)
+
+@posts_bp.route('/posts/<title>', methods=['GET'])
+def post(title):
+    post = Post.query.filter_by(title=title).first_or_404()
+    return render_template('post.html', post=post)
