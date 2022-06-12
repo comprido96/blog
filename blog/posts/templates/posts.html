@@ -3,6 +3,9 @@
 {% block content %}
     <div class="container">
         <h1>Posts Section</h1>
-        <p>Ciao bello! Questa sezione è ancora in fase di sviluppo.</p>
+        {% for post in posts %}
+        <h2>By {{ post.author }} - created: {{ post.created }}</h2>
+        <p>{{ post.body }}</p>
+        {% endfor %}
     </div>
 {% endblock %}

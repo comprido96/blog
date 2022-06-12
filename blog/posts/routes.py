@@ -1,5 +1,7 @@
 from flask import Blueprint, render_template
 from flask import current_app as app
+from ..models import db, Post
+
 
 # Blueprint Configuration
 posts_bp = Blueprint(
@@ -10,5 +12,5 @@ posts_bp = Blueprint(
 
 @posts_bp.route('/posts', methods=['GET'])
 def posts():
-    """Homepage."""
-    return render_template('posts.html')
+    posts = Post.query.all()
+    return render_template('posts.html', posts=posts)

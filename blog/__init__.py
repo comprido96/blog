@@ -20,11 +20,12 @@ def create_app():
         # Import parts of our application
         from .home import routes as home_routes
         from .posts import routes as posts_routes
+        from . import models
 
         # Register Blueprints
         app.register_blueprint(home_routes.home_bp)
         app.register_blueprint(posts_routes.posts_bp)
 
-        #db.create_all()
+        db.create_all()
 
         return app
